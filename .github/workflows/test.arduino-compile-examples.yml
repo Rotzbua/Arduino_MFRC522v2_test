@@ -5,6 +5,7 @@ on: [push, pull_request]
 
 jobs:
   arduino-compile-examples:
+    name: ${{ matrix.board.fqbn }}
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     strategy:
