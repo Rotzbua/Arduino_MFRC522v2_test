@@ -27,8 +27,8 @@ jobs:
               platform-name: esp8266:esp8266
             platforms: |
               # Install ESP8266 platform via Boards Manager
-              name: esp8266:esp8266
-              source-url: https://arduino.esp8266.com/stable/package_esp8266com_index.json
+              - name: esp8266:esp8266
+                source-url: https://arduino.esp8266.com/stable/package_esp8266com_index.json
 
     steps:
       - uses: actions/checkout@v2
