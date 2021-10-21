@@ -8,10 +8,9 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - uses: arduino/compile-sketches@v1
+      - uses: actions/checkout@v2
+      - name: Compiles every example with Arduino IDE.
+        uses: arduino/compile-sketches@v1
         with:
           fqbn: 'arduino:avr:uno'
-
+          enable-warnings-report: true
