@@ -5,7 +5,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v2
-      - uses: arduino/arduino-lint-action@v1
+      - name: Run arduino library lint.
+        uses: arduino/arduino-lint-action@v1
         with:
           library-manager: submit
           compliance: strict
