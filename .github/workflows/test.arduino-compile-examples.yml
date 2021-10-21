@@ -1,6 +1,8 @@
 name: Arduino compile examples
 on: [push, pull_request]
 
+# https://github.com/marketplace/actions/compile-arduino-sketches
+
 jobs:
   arduino-compile-examples:
     runs-on: ubuntu-20.04
