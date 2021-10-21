@@ -1,4 +1,8 @@
+name: Arduino lint
 on: [push, pull_request]
+
+# https://github.com/marketplace/actions/arduino-arduino-lint-action
+
 jobs:
   arduino-lint:
     runs-on: ubuntu-20.04
