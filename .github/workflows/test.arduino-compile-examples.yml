@@ -11,11 +11,18 @@ jobs:
       fail-fast: false
       max-parallel: 20
       matrix:
-        fqbn: ['arduino:avr:uno', 'arduino:avr:mega', 'esp8266:esp8266:d1_mini']
+        board:
+          - fqbn: "arduino:avr:uno"
+            platform-name: arduino:avr
+          - fqbn: "arduino:samd:mkr1000"
+            platform-name: arduino:samd
+          - fqbn: "esp8266:esp8266:huzzah"
+            platform-name: esp8266:esp8266
     steps:
       - uses: actions/checkout@v2
       - name: Compiles every example with Arduino IDE.
         uses: arduino/compile-sketches@v1
         with:
-          fqbn: ${{ matrix.fqbn }}
+          platforms: ${{ matrix.platforms }}
+          fqbn: ${{ matrix.board.fqbn }}
           enable-warnings-report: true
