@@ -1,12 +1,10 @@
-
-# Here we tell GitHub to run the workflow when a commit
-# is pushed or a Pull Request is opened.
+name: Arduino compile examples
 on: [push, pull_request]
 
 jobs:
   arduino-compile-examples:
     runs-on: ubuntu-20.04
-
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v2
       - name: Compiles every example with Arduino IDE.
