@@ -19,6 +19,15 @@ jobs:
             platform-name: arduino:samd
           - fqbn: "esp8266:esp8266:huzzah"
             platform-name: esp8266:esp8266
+              # Make board type-specific customizations to the matrix jobs
+        include:
+          - board:
+              platform-name: esp8266:esp8266
+              platforms: |
+                # Install ESP8266 platform via Boards Manager
+                - name: esp8266:esp8266
+                  source-url: https://arduino.esp8266.com/stable/package_esp8266com_index.json
+                  version: 2.5.0
     steps:
       - uses: actions/checkout@v2
       - name: Compiles every example with Arduino IDE.
