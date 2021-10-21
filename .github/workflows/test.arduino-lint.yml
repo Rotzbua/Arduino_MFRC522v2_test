@@ -1,7 +1,7 @@
 on: [push, pull_request]
 jobs:
   arduino-lint:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v2
