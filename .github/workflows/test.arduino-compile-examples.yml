@@ -40,3 +40,8 @@ jobs:
           platforms: ${{ matrix.platforms }}
           fqbn: ${{ matrix.board.fqbn }}
           enable-warnings-report: true
+          enable-deltas-report: true
+      - uses: actions/upload-artifact@v2
+        with:
+          name: sketches-reports
+          path: sketches-reports
