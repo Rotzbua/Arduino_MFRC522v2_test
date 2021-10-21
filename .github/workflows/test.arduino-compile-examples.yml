@@ -17,5 +17,5 @@ jobs:
       - name: Compiles every example with Arduino IDE.
         uses: arduino/compile-sketches@v1
         with:
-          fqbn: 'arduino:avr:uno'
+          fqbn: ${{ matrix.fqbn }}
           enable-warnings-report: true
