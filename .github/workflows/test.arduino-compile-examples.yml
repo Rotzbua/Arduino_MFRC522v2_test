@@ -1,0 +1,17 @@
+
+# Here we tell GitHub to run the workflow when a commit
+# is pushed or a Pull Request is opened.
+on: [push, pull_request]
+
+jobs:
+  arduino-compile-examples:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: arduino/compile-sketches@v1
+        with:
+          fqbn: 'arduino:avr:uno'
+
