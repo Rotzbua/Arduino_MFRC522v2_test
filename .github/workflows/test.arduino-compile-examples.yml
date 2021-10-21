@@ -7,6 +7,11 @@ jobs:
   arduino-compile-examples:
     runs-on: ubuntu-20.04
     timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        fqbn: ['arduino:avr:uno', 'arduino:avr:mega', 'esp8266:esp8266:d1_mini']
     steps:
       - uses: actions/checkout@v2
       - name: Compiles every example with Arduino IDE.
