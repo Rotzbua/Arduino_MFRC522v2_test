@@ -15,14 +15,6 @@ jobs:
         board:
           - fqbn: "arduino:avr:uno"
             platform-name: arduino:avr
-          - fqbn: "arduino:avr:mega"
-            platform-name: arduino:avr
-          - fqbn: "arduino:samd:mkr1000"
-            platform-name: arduino:samd
-          - fqbn: "esp8266:esp8266:generic"
-            platform-name: esp8266:esp8266
-          - fqbn: "esp8266:esp8266:d1_mini"
-            platform-name: esp8266:esp8266
         # Fix custom platform url for board matrix.
         include:
           - board:
